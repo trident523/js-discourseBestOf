@@ -14,7 +14,7 @@ Hold on there just a second. There's a couple of huge flaws with this plugin tha
 
 ### Setting Access-Control-Allow-Origin for Nginx ###
 
-Add ```add_header Access-Control-Allow-Origin "your blog url";``` to either your server block, or a location block. Restart nginx. 
+Add ```add_header Access-Control-Allow-Origin "your blog url";``` to either your server block, or a location block. Your blog url includes http://, and does not include a traling slash or /blog/. Restart nginx. 
 
 ### Install Guide for Octopress/Jekyll ###
 
