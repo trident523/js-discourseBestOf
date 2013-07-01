@@ -11,6 +11,7 @@ var BASE_URL = "http://forums.cityfellas.com";
 //Stuff NOT to change!
 var TITLE = $(document).attr('title').toLowerCase();
 var SLUG = TITLE.substring(0, TITLE.lastIndexOf('-'));
+var scroll = $(window).scrollTop();
 var grv;
 $(document).ready(function go() {
 $('#comments').html("Loading...");
@@ -39,6 +40,7 @@ $('#boardurl').attr('href',BASE_URL);
 
 }
 });
+$("html").scrollTop(scroll);
 setTimeout(go,60000);
 });
 
