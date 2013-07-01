@@ -14,12 +14,15 @@ var SLUG = TITLE.substring(0, TITLE.lastIndexOf('-'));
 var scroll = $(window).scrollTop();
 var grv;
 $(document).ready(function go() {
-    $('#comments').html("Loading...");
+$('#comments').html('Loading...');
     $.getJSON(BASE_URL + '/search.json?term=' + SLUG.replace(/\-/g, " "), function (b) {
+	$('#comments').html("No responses yet.. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>"); //JQuery throws a cross-domain error if the response is not json; i.e no responses yet. This text is removed in the next method.
+	$('#comments').append("<noscript>Or, you have javascript off.</noscript>");
+        $('#boardurl').attr('href', BASE_URL);
+
         try {
             $.getJSON(BASE_URL + b[0].results[0].url + '/wordpress.json?best=' + COMMENTS, function (a) {
-                try{
-		if (a.posts) {
+                if (a.posts) {
                     $('#comments').html('');
 
                     $.each(a.posts, function (i, v) {
@@ -34,9 +37,6 @@ $(document).ready(function go() {
                     $('#comments').html("No responses yet. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
                     $('#boardurl').attr('href', BASE_URL);
                 }
-	} catch (err){
-		$('#comments').html("No responses yet. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
-	}
             });
         } catch (err) {
             $('#comments').html("Nothing close to this page title. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
@@ -47,3 +47,4 @@ $(document).ready(function go() {
     $("html").scrollTop(scroll);
     setTimeout(go, UPDATE_TIME);
 });
+
