@@ -45,7 +45,7 @@ somewhere. In octopress, you can remove:
 ```
  and include the above code.
 
-* Edit posts.js and examine the variables at the top.
+* Edit /javascripts/js-discourse.js and examine the variables at the top.
 
 * Style the output. The quick way is to add an inline style, and I wrote a super quick one. 
 
