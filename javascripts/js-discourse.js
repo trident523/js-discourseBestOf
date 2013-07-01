@@ -15,7 +15,7 @@ var grv;
 $(document).ready(function go() {
 $('#comments').html("Loading...");
 $.getJSON(BASE_URL + '/search.json?term=' + SLUG.replace(/\-/g, " "), function(b) {
-if(typeof b.results === "undefined"){
+if(true){ //need to check for undefined here!
 $.getJSON(BASE_URL + b[0].results[0].url + '/wordpress.json?best=' + COMMENTS, function(a) {
 if(a.posts){
 $('#comments').html('');
