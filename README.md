@@ -45,9 +45,10 @@ somewhere. In octopress, you can remove:
 -{% endif %}
 ```
  and include the above code.
-3. Edit posts.js and examine the variables at the top.
-4. Style the output. The quick way is to add an inline style, and I wrote a super quick one. 
-5. Enjoy! Hope it works out.
+
+4. Edit posts.js and examine the variables at the top.
+5. Style the output. The quick way is to add an inline style, and I wrote a super quick one. 
+6. Enjoy! Hope it works out.
 
 
 ### Let me see it in action! ###
