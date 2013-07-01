@@ -1,7 +1,7 @@
 //Number of Comments
 var COMMENTS = 4;
-//Update time, default is 1 min.
-var UPDATE_TIME = 60000;
+//Update time, default is 5 min. This jumps the user's position a little on the page, so don't set it super low.
+var UPDATE_TIME = 300000;
 //URL to your forums. Exclude traling slash! ex: http://meta.discourse.org
 var BASE_URL = "http://forums.cityfellas.com";
 
