@@ -18,7 +18,8 @@ $(document).ready(function go() {
     $.getJSON(BASE_URL + '/search.json?term=' + SLUG.replace(/\-/g, " "), function (b) {
         try {
             $.getJSON(BASE_URL + b[0].results[0].url + '/wordpress.json?best=' + COMMENTS, function (a) {
-                if (a.posts) {
+                try{
+		if (a.posts) {
                     $('#comments').html('');
 
                     $.each(a.posts, function (i, v) {
@@ -30,12 +31,15 @@ $(document).ready(function go() {
                     $('#comments').append("<p> Keep chatting about this post at <a id=\"togo\"> the forums. </a>");
                     $('#togo').attr('href', BASE_URL + b[0].results[0].url);
                 } else {
-                    $('#comments').append("No responses yet. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
+                    $('#comments').html("No responses yet. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
                     $('#boardurl').attr('href', BASE_URL);
                 }
+	} catch (err){
+		$('#comments').html("No responses yet. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
+	}
             });
         } catch (err) {
-            $('#comments').append("Nothing close to this page title. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
+            $('#comments').html("Nothing close to this page title. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
             $('#boardurl').attr('href', BASE_URL);
 
         }
