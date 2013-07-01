@@ -22,18 +22,19 @@ Add ```add_header Access-Control-Allow-Origin "your blog url";``` to either your
 * Edit your ```/source/_includes/custom/head.html```  file to include this script. jQuery is included with Octopress. As long as it's placed on your posts page it should work, but it'd be best to put it in the header. Here's an example, assuming you placed the files in the source folder. 
 
 ```diff
-+ <script src="//code.jquery.com/jquery-2.0.0.js"></script> *if you need jQuery*
-+ <script src="/javascripts/js-discourse.js"></script>
++<script src="//code.jquery.com/jquery-2.0.0.js"></script> *if you need jQuery*
++<script src="/javascripts/js-discourse.js"></script>
 ```
 
-* Edit your posts.html to include:
+* Edit your posts.html to include the below somewhere. Feel free to re-write the noscript tag.
 
 ```diff
 +<h1>Comments</h1>
 +<div id="comments" style="padding-left:35px; padding-right:35px"></div>
++<noscript>Javascript is off, so comments don't load.</noscript>
 ```
 
-somewhere. In octopress, you can remove:
+In octopress, you can remove:
 
 ```diff
 -{% if site.disqus_short_name and page.comments == true %}
