@@ -17,9 +17,7 @@ $(document).ready(function go() {
 $('#comments').html('Loading...');
     $.getJSON(BASE_URL + '/search.json?term=' + SLUG.replace(/\-/g, " "), function (b) {
 	$('#comments').html("No responses yet.. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>"); //JQuery throws a cross-domain error if the response is not json; i.e no responses yet. This text is removed in the next method.
-	$('#comments').append("<noscript>Or, you have javascript off.</noscript>");
-        $('#boardurl').attr('href', BASE_URL);
-
+        $('#boardurl').attr('href', BASE_URL + b[0].results[0].url);
         try {
             $.getJSON(BASE_URL + b[0].results[0].url + '/wordpress.json?best=' + COMMENTS, function (a) {
                 if (a.posts) {
