@@ -30,7 +30,7 @@ Add ```add_header Access-Control-Allow-Origin "your blog url";``` to either your
 
 ```diff
 +<h1>Comments</h1>
-+<div id="#comments" style="padding-left:35px; padding-right:35px"></div>
++<div id="comments" style="padding-left:35px; padding-right:35px"></div>
 ```
 
 somewhere. In octopress, you can remove:
@@ -54,4 +54,4 @@ somewhere. In octopress, you can remove:
 
 ### Let me see it in action! ###
 Okay! [Check it out.](http://temp.trid.in:8080/blog/2013/07/01/title/) I don't actually have any content, but why not go for it. 
-I'm sure there's more that can be added, like avatars. However, I wanted to keep the concept fairly simple so it can be expanded by other users. Please contribute any suggestions you have to me, either here or on (meta.discourse.org)[http://meta.discourse.org/users/trident]
+I'm sure there's more that can be added, like avatars. However, I wanted to keep the concept fairly simple so it can be expanded by other users. Please contribute any suggestions you have to me, either here or on [meta.discourse.org](http://meta.discourse.org/users/trident). Or, make a pull request!
