@@ -41,5 +41,5 @@ $(document).ready(function go() {
         }
     });
     $("html").scrollTop(scroll);
-    setTimeout(go, 60000);
+    setTimeout(go, UPDATE_TIME);
 });
