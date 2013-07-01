@@ -47,7 +47,7 @@ somewhere. In octopress, you can remove:
 
 * Edit /javascripts/js-discourse.js and examine the variables at the top.
 
-* Style the output. The quick way is to add an inline style, and I wrote a super quick one. Every post has an id of post#, so you can make some cool styles. I include a <hr> tor just basic styling. 
+* Style the output. The quick way is to add an inline style, and I wrote a super quick one. Every post has an id of post#, so you can make some cool styles. I include a hr for just basic styling. 
 
 * Enjoy! Hope it works out.
 
