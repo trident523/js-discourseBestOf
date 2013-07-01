@@ -15,7 +15,7 @@ var grv;
 $(document).ready(function go() {
 $('#comments').html("Loading...");
 $.getJSON(BASE_URL + '/search.json?term=' + SLUG.replace(/\-/g, " "), function(b) {
-if(true){ //need to check for undefined here!
+try{
 $.getJSON(BASE_URL + b[0].results[0].url + '/wordpress.json?best=' + COMMENTS, function(a) {
 if(a.posts){
 $('#comments').html('');
@@ -30,10 +30,12 @@ $('#comments').append("<p> Keep chatting about this post at <a id=\"togo\"> the 
 $('#togo').attr('href',BASE_URL + b[0].results[0].url);
 } else {
 $('#comments').append("No responses yet. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
+$('#boardurl').attr('href',BASE_URL);
 }
                 });
-} else {
+} catch(err) {
 $('#comments').append("Nothing close to this page title. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
+$('#boardurl').attr('href',BASE_URL);
 
 }
 });
