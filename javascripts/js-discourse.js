@@ -22,7 +22,7 @@ if(a.posts){
 $('#comments').html('');
 
 $.each(a.posts, function(i,v){
-$('#comments').append("<div id=\"toset\">" + "<img width=\"45\" id=\"grav" + i + "\">"  + "<b>" + a.posts[i].name + "</b>" + "  said  " + a.posts[i].cooked + "</span>" + "<hr>");
+$('#comments').append("<div id=\"toset\">" + "<img width=\"45\" id=\"grav" + i + "\">"  + "<b>" + a.posts[i].name + "</b>" + "  said  " + a.posts[i].cooked + "</div>" + "<hr>");
 grv = a.posts[i].avatar_template.replace('\{size\}',"45");
 $('#grav' + i).attr('src',grv);
 $('#toset').attr('id','post' + i);
