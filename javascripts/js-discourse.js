@@ -16,8 +16,13 @@ var grv;
 $(document).ready(function go() {
 $('#comments').html('Loading...');
     $.getJSON(BASE_URL + '/search.json?term=' + SLUG.replace(/\-/g, " "), function (b) {
+	try{
 	$('#comments').html("No responses yet.. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>"); //JQuery throws a cross-domain error if the response is not json; i.e no responses yet. This text is removed in the next method.
         $('#boardurl').attr('href', BASE_URL + b[0].results[0].url);
+	} catch (err){
+	$('#comments').html("No thread yet.. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>"); //JQuery throws a cross-domain error if the response is not json; i.e no responses yet. This text is removed in the next method.
+        $('#boardurl').attr('href', BASE_URL);	
+	}
         try {
             $.getJSON(BASE_URL + b[0].results[0].url + '/wordpress.json?best=' + COMMENTS, function (a) {
                 if (a.posts) {
