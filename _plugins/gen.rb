@@ -3,17 +3,16 @@ require 'json'
 require 'pstore'
 
 module Jekyll
-  class RenderTimeTag < Liquid::Tag
+  class DiscourseComments < Liquid::Tag
 
     def render(context)
-	goodtogo = false
 	if (Jekyll.configuration({})['discourse_api_key'].nil?)
 		raise "API key not set in config! Please set discourse_api_key"
 	end
 
-	stor = PStore.new("discourse/" + context.environments.first["page"]["title"] + ".pstore")	
+	stor = PStore.new("_discourse/" + context.environments.first["page"]["title"] + ".pstore")	
 
-	if(!File.exist?("discourse/" + context.environments.first["page"]["title"] + ".pstore"))
+	if(!File.exist?("_discourse/" + context.environments.first["page"]["title"] + ".pstore"))
 		puts "We're making a new post for title:" + context.environments.first["page"]["title"]
 		@result = HTTParty.post(Jekyll.configuration({})['discourse_api_url'] + "/posts", 
 	        :body => { :api_key => Jekyll.configuration({})['discourse_api_key'], 
@@ -44,4 +43,4 @@ module Jekyll
     end
 end
 
-Liquid::Template.register_tag('render_time', Jekyll::RenderTimeTag)
+Liquid::Template.register_tag('discourse_comments', Jekyll::DiscourseComments)
