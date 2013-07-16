@@ -15,7 +15,7 @@ module Jekyll
 
 	if(!File.exist?("discourse/" + context.environments.first["page"]["title"] + ".pstore"))
 		puts "We're making a new post for title:" + context.environments.first["page"]["title"]
-		@result = HTTParty.post("http://forums.cityfellas.com/posts", 
+		@result = HTTParty.post(Jekyll.configuration({})['discourse_api_url'] + "/posts", 
 	        :body => { :api_key => Jekyll.configuration({})['discourse_api_key'], 
             		   :api_username => Jekyll.configuration({})['discourse_api_username'], 
 	   		   :title => context.environments.first["page"]["title"], 
