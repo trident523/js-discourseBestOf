@@ -112,7 +112,7 @@ It looks something like [this.][5] I didn't style the output yet, though.
 
 ----------
 
-<h2>Stuff I want to fix!</h3>
+<h3>Stuff I want to fix!</h3>
 1. I take the posts full contents over to discourse with no attempts to check the limits. If you don't write a lot you might like this, otherwise maybe we will both find what happens when you use the API to make a really long post! You might have to edit them down by hand for now. 
 2. Formatting assumes markdown. 
 3. It actually runs twice per post, for reasons I can't figure out. 
