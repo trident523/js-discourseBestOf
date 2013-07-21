@@ -26,7 +26,7 @@ $('#comments').html('Loading...');
                         $('#grav' + i).attr('src', grv);
                         $('#toset').attr('id', 'post' + i);
                     });
-                    $('#comments').append("<p> Keep chatting about this post at <a id=\"togo\"> the forums. </a>");
+                    $('#comments').append("<p> Keep chatting about this post at <a id=\"togo\"> the forums.</a> There are " + (a.filtered_posts_count - a.posts.length - 1) + " other replies.");
                     $('#togo').attr('href', BASE_URL + b[0].results[0].url);
                 } else {
                     $('#comments').html("No responses yet. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
