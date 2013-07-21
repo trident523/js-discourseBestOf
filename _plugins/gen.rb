@@ -18,7 +18,7 @@ module Jekyll
 	        :body => { :api_key => Jekyll.configuration({})['discourse_api_key'], 
             		   :api_username => Jekyll.configuration({})['discourse_api_username'], 
 	   		   :title => context.environments.first["page"]["title"], 
-			   :raw => "[From the blog: " + context.environments.first["page"]["title"] + "](" + context.environments.first["page"]["url"] + ")", 
+			   :raw => "From the blog: " + context.environments.first["page"]["title"] + "\n" + Jekyll.configuration({})['url'] + '/' + context.environments.first["page"]["url"] + ")", 
 			   :category => Jekyll.configuration({})['discourse_api_category'],
 			   :skip_validations => 'true'
              		 }.to_json,
