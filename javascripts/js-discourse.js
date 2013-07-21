@@ -5,9 +5,7 @@ var UPDATE_TIME = 300000;
 //URL to your forums. Exclude traling slash! ex: http://meta.discourse.org
 var BASE_URL = "http://forums.cityfellas.com";
 
-//Topic collision avoidance. Since in this version, discourse posts are not created, make sure you create a post with the same title as your post!
 //In the future, it might be worth comparing the topic creator ID with one hard coded here.
-
 //Stuff NOT to change!
 var TITLE = $(document).attr('title').toLowerCase();
 var SLUG = TITLE.substring(0, TITLE.lastIndexOf('-'));
@@ -36,7 +34,6 @@ $('#comments').html('Loading...');
         } catch (err) {
             $('#comments').html("Nothing close to this page title. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
             $('#boardurl').attr('href', BASE_URL);
-
         }
     $("html").scrollTop(scroll);
     setTimeout(go, UPDATE_TIME);
