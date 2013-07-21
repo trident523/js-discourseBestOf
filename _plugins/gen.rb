@@ -10,10 +10,10 @@ module Jekyll
 		raise "API key not set in config! Please set discourse_api_key"
 	end
 
-	stor = PStore.new("_discourse/" + context.environments.first["page"]["title"] + ".pstore")	
+	stor = PStore.new("_discourse/" + context.environments.first["page"]["title"].gsub('/','slash') + ".pstore")	
 
-	if(!File.exist?("_discourse/" + context.environments.first["page"]["title"] + ".pstore"))
-		puts "We're making a new post for title:" + context.environments.first["page"]["title"]
+	if(!File.exist?("_discourse/" + context.environments.first["page"]["title"].gsub('/','slash') + ".pstore"))
+		puts "We're making a new post for title:" + context.environments.first["page"]["title"].gsub('/','slash')
 		@result = HTTParty.post(Jekyll.configuration({})['discourse_api_url'] + "/posts", 
 	        :body => { :api_key => Jekyll.configuration({})['discourse_api_key'], 
             		   :api_username => Jekyll.configuration({})['discourse_api_username'], 
