@@ -14,7 +14,7 @@ var grv;
 $(document).ready(function go() {
 $('#comments').html('Loading...');
         try {
-            $.getJSON(BASE_URL + '/t/' + $('.comments').attr('tid') + '/wordpress.json?best=' + COMMENTS, function (a) {
+            $.getJSON(BASE_URL + '/t/' + $('#comments').attr('tid') + '/wordpress.json?best=' + COMMENTS, function (a) {
                 if (a.posts) {
                     $('#comments').html('');
 
