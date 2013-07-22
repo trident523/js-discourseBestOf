@@ -67,9 +67,11 @@ For octopress, the ruby file in _plugins moves to just plugins, and the javascri
 * Edit your posts.html to include the below somewhere. Feel free to re-write the noscript tag.
 
 ```diff
-+<h1>Comments</h1>
-+<div id="comments" style="padding-left:35px; padding-right:35px" {% discourse_comments %}></div>
-+<noscript>Javascript is off, so comments don't load.</noscript>
++  <section>
++    <h1>Comments</h1>
++    <div id="comments" style="padding-left:35px; padding-right:35px" {% discourse_comments %}></div>
++    <noscript>Javascript is off, so comments don't load.</noscript>
++  </section>
 ```
 
 In octopress, you can remove:
