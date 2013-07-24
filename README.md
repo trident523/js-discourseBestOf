@@ -4,8 +4,7 @@
 
 Read about it! [at it's place on meta.discourse.org](http://meta.discourse.org/t/discourse-plugin-for-static-site-generators-like-jekyll-or-octopress/7965/16)
 
-This plugin combines javascript loaded on the page with a Liquid tag, written for jekyll to generate posts from your jekyll site, and then load the "best" comments from your discourse install. The only thing you have to bring to the table is some fancy CSS, as every jekyll site is different. Comments are created with IDs of "post#" starting at 1. Comments need to live in a div with an ID of "comments."
-
+This is just the javascript part, for developers who don't need the jekyll intergration. Create a div tag with ID of comments, and a topic ID and it'll do the rest.
 ----------
 
 <h3>Great! Let's go!</h3>
