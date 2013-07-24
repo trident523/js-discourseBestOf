@@ -5,6 +5,7 @@
 Read about it! [at it's place on meta.discourse.org](http://meta.discourse.org/t/discourse-plugin-for-static-site-generators-like-jekyll-or-octopress/7965/16)
 
 This is just the javascript part, for developers who don't need the jekyll intergration. Create a div tag with ID of comments, and a topic ID and it'll do the rest.
+
 ----------
 
 <h3>Great! Let's go!</h3>
@@ -52,15 +53,15 @@ This plugin requires httparty, a cool gem that makes HTTP requests easy. It also
 You'll need the plugin files. Download them from the repository above. For a very basic jekyll install, this is as simple as taking my repository and placing it on top of your main jekyll folder. 
 
 For octopress, the ruby file in _plugins moves to just plugins, and the javascript file moves to source/javascripts. For the rest of this guide, we'll work in this folder.
+
+
 ### Javascript Guide ###
 
-
-* Add the javascript file in /javascripts/ to your source folder.
 * Edit your ```/source/_includes/custom/head.html```  file to include this script. jQuery is included with Octopress. As long as it's placed on your posts page it should work, but it'd be best to put it in the header. Here's an example, assuming you placed the files in the source folder. 
 
 ```diff
 +<script src="//code.jquery.com/jquery-2.0.0.js"></script> *if you need jQuery*
-+<script src="/javascripts/js-discourse.js"></script>
++<script src="/javascripts/js/js-discourse.js"></script>
 ```
 
 * Edit your posts.html to include the below somewhere. Feel free to re-write the noscript tag.
@@ -85,40 +86,9 @@ In octopress, you can remove:
 ```
  and include the above code.
 
-When the pages are created, this will add an attribute to the div tag called "tid", which holds the related topic ID. We're also loading the script right before it. This should probably be moved to your header instead, but for now let's keep moving. 
+When the pages are created, this will add an attribute to the div tag called "tid", which holds the related topic ID. 
 
-Back out of your source directory, and create a directory called `_discourse`. Next, edit your `_config.yml` to include:
 
-    discourse_api_key: Your api key
-    discourse_api_username: Username to post as
-    discourse_api_category: Category to post to
-    discourse_api_url: The URL of your discourse install, include http:// and no trailing slash.
-
-Remember that spacing in a yaml file is important. Each entry is a new line, and one space after the colon.
-
-Next, edit `js-discourse.js` and view the configuration at the top. Remember that java-script is run client side, so setting the update time low will hammer your server from many locations.
-
-To recap:
-
-1. Add Access-Control headers to your nginx/apache config.
-2. Install httparty and json. Edit your Gemfile if you use one, otherwise install directly.
-3. Add the liquid tag to whatever layout you want comments for.
-4. Add needed information to your configuration yaml file.
-5. Add needed information to `js-discourse.js` 
-6. Generate your site!
-
-**Congrats! You made it**. You should be able to generate your site and all of your posts will sync. It's important to note that the folder you created stores a `pstore` file with the title of your post. If it can't find these for some reason, when you generate you will create new posts with duplicated content. While it won't delete the old posts, you'll find that it will load comments from your newly duplicated post instead of the old one. Treat these files just like your database, carefully!
-
-It looks something like [this.][5] I didn't style the output yet, though.
-
-----------
-
-<h3>Stuff I want to fix!</h3>
-1. I take the posts full contents over to discourse with no attempts to check the limits. If you don't write a lot you might like this, otherwise maybe we will both find what happens when you use the API to make a really long post! You might have to edit them down by hand for now. 
-2. Formatting assumes markdown. 
-3. It actually runs twice per post, for reasons I can't figure out. 
-
-----------
 <h3> Extra Notes </h3>
 I've detailed some of the implementation in the posts above, but if you use some other kind of site generator all you need to create is a div/span with an ID of comments, and an attritube called "tid." Then, you can just load the javascript and comments will render in that space. The topic ID is the number that follows after `/t/<post-slug>/` and is not the last number. 
 
