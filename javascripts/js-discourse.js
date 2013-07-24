@@ -27,12 +27,13 @@ $('#comments').html('Loading...');
                     $('#comments').append("<p> Keep chatting about this post at <a id=\"togo\"> the forums.</a> There are " + (a.filtered_posts_count - a.posts.length - 1) + " other replies.");
                     $('#togo').attr('href', BASE_URL + '/t/load/' + $('#comments').attr('tid'));
                 } else {
-                console.log(err);
+                
                     $('#comments').html("No responses yet. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
                     $('#boardurl').attr('href', BASE_URL);
                 }
             });
         } catch (err) {
+                console.log(err);
             $('#comments').html("Nothing close to this page title. Go start the discussion at " + "<a id=\"boardurl\">" + "the forums." + "</a>");
             $('#boardurl').attr('href', BASE_URL);
         }
