@@ -25,5 +25,4 @@ And if you're really looking to build it out in some other kind of framework I'd
 
 
 ### Let me see it in action! ###
-Okay! [Check it out.](http://temp.trid.in:8080/blog/2013/07/01/title/) I don't actually have any content, but why not go for it. 
-I'm sure there's more that can be added, like avatars. However, I wanted to keep the concept fairly simple so it can be expanded by other users. Please contribute any suggestions you have to me, either here or on [meta.discourse.org](http://meta.discourse.org/users/trident). Or, make a pull request!
+Okay! I don't have a demo link for you to look at at the moment, so you're just going to have to take my word that it works!
