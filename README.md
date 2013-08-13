@@ -12,6 +12,14 @@ For example:
 ```
 will populate the div tag with the "best" posts of topic ID 200, as specified in the javascript file.
 
+You need to set the Access-Control-Allow-Origin header for discourse. That's as simple as:
+```
+add_header "Access-Control-Allow-Origin" "*";
+```
+in nginx!
+
+This allows all sites to load your content via javascript. If you would like, replace the * with the public location of your jekyll install, including http://. The security of this is debated all over, but I find it safe. For more security, add the header only to your json files using a location block!
+
 Read the guide over [here for how to intergrate the two together.][7]
 
 <h3> Extra Notes </h3>
