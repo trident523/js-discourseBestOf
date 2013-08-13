@@ -6,6 +6,12 @@ Read about it! [at it's place on meta.discourse.org](http://meta.discourse.org/t
 
 This is just the javascript part, for developers who don't need the jekyll intergration. Create a div tag with ID of comments, and a topic ID and it'll do the rest.
 
+For example:
+```
+<div id="comments" tid="200"></div>
+```
+will populate the div tag with the "best" posts of topic ID 200, as specified in the javascript file.
+
 Read the guide over [here for how to intergrate the two together.][7]
 
 <h3> Extra Notes </h3>
