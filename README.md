@@ -39,4 +39,4 @@ And if you're really looking to build it out in some other kind of framework I'd
 
 
 ### Let me see it in action! ###
-Okay! I don't have a demo link for you to look at at the moment, so you're just going to have to take my word that it works!
+Okay! [Check out the github page for this project!](http://trident523.github.io/js-discourseBestOf/)
