@@ -25,7 +25,7 @@ jQuery('#comments').html('Loading...');
                     jQuery('#comments').html('');
 
                     jQuery.each(a.posts, function (i, v) {
-                        jQuery('#comments').append("<div id=\"toset\">" + "<img width=\"45\" id=\"grav" + i + "\">" + "<b>" + a.posts[i].name + "</b>" + "  said  " + a.posts[i].cooked + "</div>" + "<hr>");
+                        jQuery('#comments').append("<div id=\"toset\">" + "<img style="width:auto;" width=\"45\" id=\"grav" + i + "\">" + "<b>" + a.posts[i].name + "</b>" + "  said  " + a.posts[i].cooked + "</div>" + "<hr>");
                         grv = a.posts[i].avatar_template.replace('\{size\}', "45");
                         jQuery('#grav' + i).attr('src', grv);
                         jQuery('#toset').attr('id', 'post' + i);
