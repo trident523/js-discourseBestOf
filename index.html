@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="JS-discourseBestOf : A jQuery based implementation of wp-discourse." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>JS-discourseBestOf</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/trident523/js-discourseBestOf">View on GitHub</a>
+
+          <h1 id="project_title">JS-discourseBestOf</h1>
+          <h2 id="project_tagline">A jQuery based implementation of wp-discourse.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/trident523/js-discourseBestOf/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/trident523/js-discourseBestOf/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a name="js-discoursebestof" class="anchor" href="#js-discoursebestof"><span class="octicon octicon-link"></span></a>js-discourseBestOf</h2>
+
+<p><strong>js-discourseBestOf</strong> is a jQuery based wrapper for the  <a href="https://github.com/discourse/wp-discourse" title="wp-discourse">wp-discourse</a> plugin for <a href="https://github.com/discourse/discourse">discourse</a>. </p>
+
+<p>Read about it! <a href="http://meta.discourse.org/t/discourse-plugin-for-static-site-generators-like-jekyll-or-octopress/7965/16">at it's place on meta.discourse.org</a></p>
+
+<p>This is just the javascript part, for developers who don't need the jekyll intergration. Create a div tag with ID of comments, and a topic ID and it'll do the rest.</p>
+
+<p>For example:</p>
+
+<pre><code>&lt;div id="comments" tid="200"&gt;&lt;/div&gt;
+</code></pre>
+
+<p>will populate the div tag with the "best" posts of topic ID 200, as specified in the javascript file.</p>
+
+<p>You need to set the Access-Control-Allow-Origin header for discourse. That's as simple as:</p>
+
+<pre><code>add_header "Access-Control-Allow-Origin" "*";
+</code></pre>
+
+<p>in nginx!</p>
+
+<p>This allows all sites to load your content via javascript. If you would like, replace the * with the public location of your jekyll install, including http://. The security of this is debated all over, but I find it safe. For more security, add the header only to your json files using a location block!</p>
+
+<p>Read the guide over <a href="https://github.com/trident523/jekyll-DiscourseBestOf">here for how to intergrate the two together.</a></p>
+
+<h3>
+<a name="-extra-notes-" class="anchor" href="#-extra-notes-"><span class="octicon octicon-link"></span></a> Extra Notes </h3>
+
+<p>I've detailed some of the implementation in the posts above, but if you use some other kind of site generator all you need to create is a div/span with an ID of comments, and an attritube called "tid." Then, you can just load the javascript and comments will render in that space. The topic ID is the number that follows after <code>/t/&lt;post-slug&gt;/</code> and is not the last number. </p>
+
+<p>And if you're really looking to build it out in some other kind of framework I'd recommend looking at the original <a href="https://github.com/discourse/wp-discourse">wp-discourse</a>. Or, just load up <code>/t/&lt;topicID&gt;/wordpress.json?best=number</code> and parse it from there.</p>
+
+<h3>
+<a name="let-me-see-it-in-action" class="anchor" href="#let-me-see-it-in-action"><span class="octicon octicon-link"></span></a>Let me see it in action!</h3>
+
+<p>Okay! In the next revision of this page, I'll put in the live loader right here.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">JS-discourseBestOf maintained by <a href="https://github.com/trident523">trident523</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
