@@ -1,5 +1,10 @@
 ##js-discourseBestOf##
 
+>##Hey! You should check out the [official way to do this.][8] This script probably still works, but I'm no longer maintaining it.
+
+
+
+
 **js-discourseBestOf** is a jQuery based wrapper for the  [wp-discourse](https://github.com/discourse/wp-discourse "wp-discourse") plugin for [discourse](https://github.com/discourse/discourse). 
 
 Read about it! [at it's place on meta.discourse.org](http://meta.discourse.org/t/discourse-plugin-for-static-site-generators-like-jekyll-or-octopress/7965/16)
@@ -35,8 +40,5 @@ And if you're really looking to build it out in some other kind of framework I'd
   [5]: http://temp.trid.in:8080/
   [6]: https://github.com/discourse/wp-discourse
   [7]: https://github.com/trident523/jekyll-DiscourseBestOf
+  [8]: http://eviltrout.com/2014/01/22/embedding-discourse.html
 
-
-
-### Let me see it in action! ###
-Okay! [Check out the github page for this project!](http://trident523.github.io/js-discourseBestOf/)
